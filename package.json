@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/jambo0624/JaB-UI/issues"
   },
-  "homepage": "https://github.com/jambo0624/JaB-UI#readme"
+  "homepage": "https://github.com/jambo0624/JaB-UI#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  }
 }
