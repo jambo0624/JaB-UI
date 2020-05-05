@@ -43,7 +43,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -88,7 +88,7 @@
       <workItem from="1588606006124" duration="83000" />
       <workItem from="1588606101778" duration="111000" />
       <workItem from="1588606225750" duration="134000" />
-      <workItem from="1588655534519" duration="1228000" />
+      <workItem from="1588655534519" duration="1783000" />
     </task>
     <servers />
   </component>
