@@ -17,6 +17,8 @@ new Vue({
 });
 
 import chai from 'chai'
+import spies from 'chai-spies'
+chai.use(spies)
 const expect = chai.expect
 {
   const Constructor = Vue.extend(Button)
@@ -88,16 +90,16 @@ const expect = chai.expect
   const div = document.createElement('div')
   document.body.append(div)
   var Constructor = Vue.extend(Button)
-  var jButton = new Constructor({
+  var vm = new Constructor({
     propsData:{
       icon: 'setting'
     }
   })
-  jButton.$mount()
-  // 希望下面👇的函数被执行
-  jButton.$on('click',function(){
-    expect(1).to.eq(1)
-  })
-  let button = jButton.$el
+  vm.$mount()
+  // mock
+  let spy = chai.spy(function(){})
+  vm.$on('click',spy)
+  let button = vm.$el
   button.click()
+  expect(spy).to.have.been.called()
 }
