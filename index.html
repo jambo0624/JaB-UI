@@ -1,35 +1,60 @@
 <!doctype html>
 <html lang="zh-Hans">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>JaB-UI</title>
-    <style>
-        * {margin: 0;padding: 0;box-sizing: border-box;}
-        html {
-            --font-size: 14px;
-            --button-height: 32px;
-            --button-bg: white;
-            --button-active-bg: #eee;
-            --color: #333;
-            --border-color: #999;
-            --border-color-hover: #666;
-            --border-radius: 4px;
-        }
-        #app {
-            margin: 20px;
-        }
-        body {
-            font-size: var(--font-size);
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>JaB-UI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      --font-size: 14px;
+      --button-height: 32px;
+      --button-bg: white;
+      --button-active-bg: #eee;
+      --color: #333;
+      --border-color: #999;
+      --border-color-hover: #666;
+      --border-radius: 4px;
+    }
+
+    #app {
+      margin: 20px;
+    }
+
+    body {
+      font-size: var(--font-size);
+    }
+  </style>
+  <style>
+    .icon {
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+    }
+  </style>
 </head>
 <body>
-    <div id="app">
-        <j-button></j-button>
-    </div>
-    <script src="src/app.js"></script>
+<div id="app">
+  <j-button>
+    按钮
+  </j-button>
+  <j-button icon="setting">
+    按钮
+  </j-button>
+  <j-button icon="setting" icon-position="right">
+    按钮
+  </j-button>
+</div>
+<script src="src/app.js"></script>
+<script src="//at.alicdn.com/t/font_1709191_6gqc8fqpu3v.js"></script>
 </body>
 </html>
