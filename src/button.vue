@@ -8,6 +8,7 @@
   </button>
 </template>
 <script>
+  import Icon from './icon'
   export default {
     props: {
       icon: {},
@@ -22,6 +23,9 @@
         type: Boolean,
         default: false
       }
+    },
+    components:{
+      'j-icon':Icon
     }
   }
 </script>
