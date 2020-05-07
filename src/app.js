@@ -84,3 +84,20 @@ const expect = chai.expect
   vm.$el.remove()
   vm.$destroy()
 }
+{
+  const div = document.createElement('div')
+  document.body.append(div)
+  var Constructor = Vue.extend(Button)
+  var jButton = new Constructor({
+    propsData:{
+      icon: 'setting'
+    }
+  })
+  jButton.$mount()
+  // 希望下面👇的函数被执行
+  jButton.$on('click',function(){
+    expect(1).to.eq(1)
+  })
+  let button = jButton.$el
+  button.click()
+}
