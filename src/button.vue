@@ -1,8 +1,6 @@
 <template>
   <button class="j-button" :class="{[`icon-${iconPosition}`]:true}">
-    <svg v-if="icon" class="icon" aria-hidden="true">
-      <use :xlink:href='`#j-${icon}`'></use>
-    </svg>
+    <j-icon v-if="icon" :name="icon" class="icon"></j-icon>
     <div class="content">
       <slot></slot>
     </div>
