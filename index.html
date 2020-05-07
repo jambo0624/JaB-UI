@@ -2,8 +2,7 @@
 <html lang="zh-Hans">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>JaB-UI</title>
   <style>
@@ -35,15 +34,14 @@
 </head>
 <body>
 <div id="app">
-  <j-button :loading="loading1" @click="loading1 = !loading1">
-    按钮
-  </j-button>
-  <j-button icon="setting" :loading="loading2" @click="loading2 = !loading2">
-    按钮
-  </j-button>
-  <j-button icon="setting" icon-position="right" :loading="loading3" @click="loading3 = !loading3">
-    按钮
-  </j-button>
+  <j-button :loading="loading1" @click="loading1 = !loading1">按钮</j-button>
+  <j-button icon="setting" :loading="loading2" @click="loading2 = !loading2">按钮</j-button>
+  <j-button icon="setting" icon-position="right" :loading="loading3" @click="loading3 = !loading3">按钮</j-button>
+  <j-button-group>
+    <j-button icon="left">上一页</j-button>
+    <j-button>更多</j-button>
+    <j-button icon="right" icon-position="right">下一页</j-button>
+  </j-button-group>
 </div>
 <script src="src/app.js"></script>
 <script src="//at.alicdn.com/t/font_1709191_6gqc8fqpu3v.js"></script>
