@@ -1,6 +1,7 @@
 <template>
-  <button class="j-button" :class="{[`icon-${iconPosition}`]:true}">
-    <j-icon v-if="icon" :name="icon" class="icon"></j-icon>
+  <button class="j-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
+    <j-icon v-if="icon && !loading" :name="icon" class="icon"></j-icon>
+    <j-icon v-if="loading" name="loading" class="loading icon"></j-icon>
     <div class="content">
       <slot></slot>
     </div>
@@ -9,18 +10,30 @@
 <script>
   export default {
     props: {
-      'icon': {},
-      'iconPosition': {
+      icon: {},
+      iconPosition: {
         type: String,
         default: 'left',
         validator(value) {
           return !(value !== 'left' && value !== 'right');
         }
+      },
+      loading:{
+        type: Boolean,
+        default: false
       }
     }
   }
 </script>
 <style lang="scss" scoped>
+  @keyframes spin {
+    from {
+      transform: rotate(0)
+    }
+    to {
+      transform: rotate(360deg)
+    }
+  }
   .j-button {
     font-size: var(--font-size);
     height: var(--button-height);
@@ -53,7 +66,9 @@
     > .content {
       order: 2;
     }
-
+    .loading{
+      animation: spin 2s infinite linear;
+    }
     &.icon-right {
       > .icon {
         order: 2;
