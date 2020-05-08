@@ -1,4 +1,5 @@
 # 一个基于 vue 的UI 框架
+[![Build Status](https://travis-ci.org/jambo0624/JaB-UI.svg?branch=master)](https://travis-ci.org/jambo0624/JaB-UI)
 
  作者：Jambo
 
@@ -30,6 +31,22 @@ IE8及以上都支持此样式。
   }
 ```
 IE15 以上支持此样式
+
+2. 安装jab-ui
+` npm i --save jab-ui`
+
+3. 引入jab-ui
+``` js
+  import {Button, ButtonGroup, Icon} from 'jab-ui'
+  import 'jab-ui/dist/index.css'
+  export default {
+    name: 'app',
+    components: {
+      'j-button': Button,
+      'j-icon': Icon
+    }
+  }
+```
 
 ## 文档
 ## 提问
