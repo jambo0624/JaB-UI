@@ -63,7 +63,13 @@
       }
     }
     &.error {
-      > input { border-color: $red;}
+      > input {
+        &:focus {
+          box-shadow: inset 0 0px 3px $red;
+          outline: none;
+        }
+        border-color: $red;
+      }
     }
     .icon-error {
       fill: $red;
