@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bee2c65b-529b-4446-975a-b6920f547049" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/input.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/input.vue" beforeDir="false" afterPath="$PROJECT_DIR$/src/input.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/button.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/button.test.js" afterDir="false" />
     </list>
     <list id="1370decf-9e1d-42a1-b397-f172b6691956" name="Revert &quot;修改缩进设置，添加icon和iconPosition属性，两个知识点inline-flex/order和设置order之后vertical-align调整竖向对齐&quot;" comment="修改缩进设置，添加icon和iconPosition属性，两个知识点inline-flex/order和设置order之后vertical-align调整竖向对齐" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -280,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1589080534913</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="index.js里面添加input组件，并用parcel build之后进行测试，同时修改build脚本为dev-build">
+      <created>1589081052709</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1589081052710</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,6 +332,7 @@
     <MESSAGE value="新增.eslintrc.js解决别人引用包是的错误" />
     <MESSAGE value="下载svg，并引入到icon.vue" />
     <MESSAGE value="添加 input.vue 及其样式，app.js里面引入，index.html里面添加，每个组件添加名字(以J开头)" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加 input.vue 及其样式，app.js里面引入，index.html里面添加，每个组件添加名字(以J开头)" />
+    <MESSAGE value="index.js里面添加input组件，并用parcel build之后进行测试，同时修改build脚本为dev-build" />
+    <option name="LAST_COMMIT_MESSAGE" value="index.js里面添加input组件，并用parcel build之后进行测试，同时修改build脚本为dev-build" />
   </component>
 </project>
