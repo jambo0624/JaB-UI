@@ -39,21 +39,27 @@
 </head>
 <body>
 <div id="app">
-  <j-row>
-    <j-col>1</j-col>
-    <j-col>2</j-col>
-    <j-col>3</j-col>
-    <j-col>4</j-col>
-  </j-row>
-  <j-row>
-    <j-col :span="4">2</j-col>
-    <j-col :span="20">10</j-col>
-  </j-row>
-  <j-row>
-    <j-col :span="4">2</j-col>
-    <j-col :span="8" :offset="2">4</j-col>
-    <j-col :span="8" :offset="2">4</j-col>
-  </j-row>
+  <div style="border: 1px solid yellow;">
+    <j-row :gutter="20">
+      <j-col>1</j-col>
+      <j-col>2</j-col>
+    </j-row>
+    <j-row :gutter="20">
+      <j-col>1</j-col>
+      <j-col>2</j-col>
+      <j-col>3</j-col>
+      <j-col>4</j-col>
+    </j-row>
+    <j-row>
+      <j-col :span="4">2</j-col>
+      <j-col :span="20">10</j-col>
+    </j-row>
+    <j-row>
+      <j-col :span="4">2</j-col>
+      <j-col :span="8" :offset="2">4</j-col>
+      <j-col :span="8" :offset="2">4</j-col>
+    </j-row>
+  </div>
   <div class="box">
     <j-input v-model="message"></j-input>
     <j-input value="李四" disabled></j-input>
