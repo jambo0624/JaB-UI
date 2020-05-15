@@ -35,29 +35,60 @@
     .box{
       margin: 20px;
     }
+    .topBar{
+      height: 50px;
+      margin-bottom: 20px;
+    }
+    .topBar .demoBox{
+      border: 1px solid green;
+    }
   </style>
 </head>
 <body>
 <div id="app">
+  <j-row class="topBar">
+    <j-col :span="9" class="demoBox" >
+      <j-row align="center">
+        <j-col>1</j-col>
+        <j-col>1</j-col>
+        <j-col>1</j-col>
+        <j-col>1</j-col>
+      </j-row>
+    </j-col>
+    <j-col :span="15" class="demoBox" >
+      <j-row align="right">
+        <j-col>1</j-col>
+        <j-col>1</j-col>
+        <j-col>1</j-col>
+        <j-col>1</j-col>
+        <j-col>1</j-col>
+        <j-col>1</j-col>
+        <j-col>1</j-col>
+      </j-row>
+    </j-col>
+  </j-row>
+  <j-row>
+
+  </j-row>
   <div style="border: 1px solid #000;">
     <j-row :gutter="20">
       <j-col>1</j-col>
-      <j-col>2</j-col>
+      <j-col>1</j-col>
     </j-row>
     <j-row :gutter="20">
       <j-col>1</j-col>
-      <j-col>2</j-col>
-      <j-col>3</j-col>
-      <j-col>4</j-col>
+      <j-col>1</j-col>
+      <j-col>1</j-col>
+      <j-col>1</j-col>
     </j-row>
     <j-row>
-      <j-col :span="4">2</j-col>
-      <j-col :span="20">10</j-col>
+      <j-col :span="4">4</j-col>
+      <j-col :span="20">20</j-col>
     </j-row>
     <j-row>
-      <j-col :span="4">2</j-col>
-      <j-col :span="8" :offset="2">4</j-col>
-      <j-col :span="8" :offset="2">4</j-col>
+      <j-col :span="4">4</j-col>
+      <j-col :span="8" :offset="2">8</j-col>
+      <j-col :span="8" :offset="2">8</j-col>
     </j-row>
   </div>
   <div class="box">

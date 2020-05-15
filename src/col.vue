@@ -38,7 +38,6 @@
 </script>
 <style lang="scss" scoped>
   .col{
-    width: 50%;
     /*flex-shrink: 0;  不缩放，意思是不换行也不压缩*/
     $class-prefix: col-;
     @for $n from 1 through 24 {
