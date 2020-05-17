@@ -41,7 +41,8 @@
 <style lang="scss" scoped>
   .row{
     display: flex;
-    flex-wrap: nowrap; /*flex默认属性*/
+    flex-wrap: wrap;
+    /*flex-wrap: nowrap; flex默认属性*!*/
     &.align-left{
       justify-content: flex-start;
     }
