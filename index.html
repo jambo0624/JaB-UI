@@ -24,7 +24,6 @@
     }
 
     #app {
-      margin: 20px;
     }
 
     body {
@@ -36,17 +35,29 @@
       border: 1px solid #666;
       min-height: 100px;
     }
+    .sider{
+      background: #333;
+      width: 200px;
+    }
+    .header{
+      background: #999;
+      height: 100px;
+    }
+    .footer{
+      background: #ccc;
+      height: 50px;
+    }
   </style>
 </head>
 <body>
 <div id="app">
   <j-layout style="height: 100vh">
-    <j-header class="demo">header</j-header>
+    <j-sider class="demo">sider</j-sider>
     <j-layout>
-      <j-sider class="demo">sider</j-sider>
+      <j-header class="demo">header</j-header>
       <j-content class="demo">content</j-content>
+      <j-footer class="demo">footer</j-footer>
     </j-layout>
-    <j-footer class="demo">footer</j-footer>
   </j-layout>
 
 </div>

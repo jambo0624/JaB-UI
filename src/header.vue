@@ -3,7 +3,11 @@
     <slot></slot>
   </div>
 </template>
-<script></script>
+<script>
+  export default {
+    name: 'JHeader'
+  }
+</script>
 <style lang="scss" scoped>
   .header{}
 </style>

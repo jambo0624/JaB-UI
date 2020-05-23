@@ -3,7 +3,11 @@
     <slot></slot>
   </div>
 </template>
-<script></script>
+<script>
+  export default {
+    name: 'JContent'
+  }
+</script>
 <style lang="scss" scoped>
   .content{
     flex-grow: 1;
