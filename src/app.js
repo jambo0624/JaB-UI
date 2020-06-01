@@ -10,6 +10,8 @@ import Header from './header'
 import Content from './content'
 import Footer from './footer'
 import Sider from './sider'
+import Toast from './toast'
+import plugin from './plugin'
 
 Vue.component('j-button', Button);
 Vue.component('j-icon', Icon);
@@ -22,6 +24,8 @@ Vue.component('j-header', Header);
 Vue.component('j-content', Content);
 Vue.component('j-sider', Sider);
 Vue.component('j-footer', Footer);
+Vue.component('j-toast', Toast);
+Vue.use(plugin)
 
 new Vue({
   el: '#app',
@@ -31,9 +35,11 @@ new Vue({
     loading3: false,
     message: '张三'
   },
+  created(){
+  },
   methods:{
-    inputChange(event){
-      console.log(event.target.value)
+    showToast(){
+      this.$toast('兔斯基')
     }
   }
 });
