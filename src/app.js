@@ -10,7 +10,6 @@ import Header from './header'
 import Content from './content'
 import Footer from './footer'
 import Sider from './sider'
-import Toast from './toast'
 import plugin from './plugin'
 
 Vue.component('j-button', Button);
@@ -24,7 +23,6 @@ Vue.component('j-header', Header);
 Vue.component('j-content', Content);
 Vue.component('j-sider', Sider);
 Vue.component('j-footer', Footer);
-Vue.component('j-toast', Toast);
 Vue.use(plugin)
 
 new Vue({
