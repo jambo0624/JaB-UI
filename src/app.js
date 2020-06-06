@@ -34,10 +34,10 @@ new Vue({
     message: '张三'
   },
   created(){
+    this.$toast('兔斯基')
   },
   methods:{
     showToast(){
-      this.$toast('兔斯基')
     }
   }
 });
