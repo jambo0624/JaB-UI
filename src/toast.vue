@@ -1,7 +1,9 @@
 <template>
   <div class="toast" ref="wrapper">
-    <slot v-if="!enableHtml"></slot>
-    <div v-else v-html="$slots.default"></div>
+    <div class="message">
+      <slot v-if="!enableHtml"></slot>
+      <div v-else v-html="$slots.default"></div>
+    </div>
     <div class="line" ref="line"></div>
     <span class="close" v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
   </div>
@@ -32,16 +34,22 @@
       }
     },
     mounted() {
-      if(this.autoClose){
-        setTimeout(()=>{
-          this.close()
-        },this.autoCloseDelay*1000)
-      }
-      this.$nextTick(()=>{
-        this.$refs.line.style.height = `${this.$refs.wrapper.getBoundingClientRect().height-10}px`
-      })
+      this.updateStyles()
+      this.execAutoClose()
     },
     methods:{
+      execAutoClose(){
+        if(this.autoClose){
+          setTimeout(()=>{
+            this.close()
+          },this.autoCloseDelay*1000)
+        }
+      },
+      updateStyles(){
+        this.$nextTick(()=>{
+          this.$refs.line.style.height = `${this.$refs.wrapper.getBoundingClientRect().height}px`
+        })
+      },
       close(){
         this.$el.remove() // destroy并不能把元素从页面中删除，所以需要自己删除
         this.$destroy()
@@ -74,6 +82,9 @@
     border-radius: 4px;
     color: white;
     padding: 0 16px;
+    .message{
+      padding: 8px 0;
+    }
     .close{
       padding-left: 15px;
       flex-shrink: 0;
