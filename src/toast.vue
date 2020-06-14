@@ -1,7 +1,7 @@
 <template>
-  <div class="toast">
+  <div class="toast" ref="wrapper">
     <slot></slot>
-    <div class="line"></div>
+    <div class="line" ref="line"></div>
     <span class="close" v-if="closeButton" @click="onClickClose">{{closeButton.text}}</span>
   </div>
 </template>
@@ -32,6 +32,9 @@
           this.close()
         },this.autoCloseDelay*1000)
       }
+      this.$nextTick(()=>{
+        this.$refs.line.style.height = `${this.$refs.wrapper.getBoundingClientRect().height-10}px`
+      })
     },
     methods:{
       close(){
@@ -50,12 +53,12 @@
 
 <style lang="scss" scoped>
   $font-size: 14px;
-  $toast-height: 40px;
+  $toast-min-height: 40px;
   $toast-background: rgb(0,0,0,0.75);
   .toast {
     font-size: $font-size;
     line-height: 1.8;
-    height: $toast-height;
+    min-height: $toast-min-height;
     position: fixed;
     top: 0;
     left: 50%;
@@ -66,13 +69,14 @@
     border-radius: 4px;
     color: white;
     padding: 0 16px;
-  }
-  .close{
-    padding-left: 15px;
-  }
-  .line {
-    margin-left: 15px;
-    border-left: 1px solid #ddd;
-    height: 60%;
+    .close{
+      padding-left: 15px;
+      flex-shrink: 0;
+    }
+    .line {
+      margin-left: 15px;
+      border-left: 1px solid #ddd;
+      height: 60%;
+    }
   }
 </style>
