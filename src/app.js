@@ -34,7 +34,14 @@ new Vue({
     message: '张三'
   },
   created(){
-    this.$toast('兔斯基')
+    this.$toast('兔斯基',{
+      closeButton:{
+        text: '知道了',
+        callback(){
+          console.log('用户说他知道了')
+        }
+      }
+    })
   },
   methods:{
     showToast(){

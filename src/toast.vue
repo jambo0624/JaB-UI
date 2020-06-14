@@ -16,31 +16,33 @@
       },
       autoCloseDelay:{
         type: Number,
-        default: 10
+        default: 5
       },
       closeButton:{
         type: Object,
         default: () => ({
           text: '关闭',
-          callback:(toast)=>{
-            toast.close()
-          }
+          callback: undefined
         })
       }
     },
     mounted() {
-      setTimeout(()=>{
-        this.close()
-      },this.autoCloseDelay*1000)
+      if(this.autoClose){
+        setTimeout(()=>{
+          this.close()
+        },this.autoCloseDelay*1000)
+      }
     },
     methods:{
       close(){
-        this.$el.remove()
+        this.$el.remove() // destroy并不能把元素从页面中删除，所以需要自己删除
         this.$destroy()
       },
       onClickClose(){
         this.close()
-        this.closeButton.callback()
+        if(this.closeButton.callback && typeof this.closeButton.callback === 'function'){
+          this.closeButton.callback()
+        }
       }
     }
   }
