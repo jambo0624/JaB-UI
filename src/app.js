@@ -35,7 +35,9 @@ new Vue({
   },
   created(){
     this.$toast('<strong>温馨提示:近期少外出！</strong>',{
-      enableHtml: true
+      enableHtml: true,
+      position: 'middle',
+      autoClose: false
     })
   },
   methods:{
