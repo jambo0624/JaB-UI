@@ -36,11 +36,19 @@ new Vue({
   created(){
   },
   methods:{
-    showToast(){
+    showToast1(){
+      this.showToast('top')
+    },
+    showToast2(){
+      this.showToast('middle')
+    },
+    showToast3(){
+      this.showToast('bottom')
+    },
+    showToast(position){
       this.$toast('<strong>温馨提示:近期少外出！</strong>',{
         enableHtml: true,
-        position: 'middle',
-        autoClose: false
+        position: position
       })
     }
   }
