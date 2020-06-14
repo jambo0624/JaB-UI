@@ -34,10 +34,8 @@ new Vue({
     message: '张三'
   },
   created(){
-    this.$toast('兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基兔斯基',{
-      closeButton:{
-        text: '知道了'
-      }
+    this.$toast('<strong>温馨提示:近期少外出！</strong>',{
+      enableHtml: true
     })
   },
   methods:{
