@@ -66,6 +66,7 @@
       },
       close(){
         this.$el.remove() // destroy并不能把元素从页面中删除，所以需要自己删除
+        this.$emit('close')
         this.$destroy()
       },
       onClickClose(){
