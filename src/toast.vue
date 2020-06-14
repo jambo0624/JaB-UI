@@ -46,7 +46,6 @@
     },
     computed:{
       toastClasses(){
-        console.log(this.position)
         return {
           [`position-${this.position}`]: true
         }

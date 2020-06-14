@@ -34,14 +34,14 @@ new Vue({
     message: '张三'
   },
   created(){
-    this.$toast('<strong>温馨提示:近期少外出！</strong>',{
-      enableHtml: true,
-      position: 'middle',
-      autoClose: false
-    })
   },
   methods:{
     showToast(){
+      this.$toast('<strong>温馨提示:近期少外出！</strong>',{
+        enableHtml: true,
+        position: 'middle',
+        autoClose: false
+      })
     }
   }
 });
