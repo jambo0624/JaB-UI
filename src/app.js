@@ -11,6 +11,11 @@ import Content from './content'
 import Footer from './footer'
 import Sider from './sider'
 import plugin from './plugin'
+import Tabs from './tabs'
+import TabsHead from './tabs-head'
+import TabsHeadItem from './tabs-head-item'
+import TabsBody from './tabs-body'
+import TabsBodyPane from './tabs-body-pane'
 
 Vue.component('j-button', Button);
 Vue.component('j-icon', Icon);
@@ -23,34 +28,21 @@ Vue.component('j-header', Header);
 Vue.component('j-content', Content);
 Vue.component('j-sider', Sider);
 Vue.component('j-footer', Footer);
+Vue.component('j-tabs', Tabs);
+Vue.component('j-tabs-head', TabsHead);
+Vue.component('j-tabs-head-item', TabsHeadItem);
+Vue.component('j-tabs-body', TabsBody);
+Vue.component('j-tabs-body-pane', TabsBodyPane);
 Vue.use(plugin)
 
 new Vue({
   el: '#app',
   data:{
-    loading1: false,
-    loading2: true,
-    loading3: false,
-    message: '张三'
   },
   created(){
   },
   methods:{
-    showToast1(){
-      this.showToast('top')
-    },
-    showToast2(){
-      this.showToast('middle')
-    },
-    showToast3(){
-      this.showToast('bottom')
-    },
-    showToast(position){
-      this.$toast('<strong>温馨提示:近期少外出！</strong>',{
-        enableHtml: true,
-        position: position
-      })
-    }
+
   }
 });
 

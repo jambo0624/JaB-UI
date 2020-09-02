@@ -37,9 +37,33 @@
 </head>
 <body>
 <div id="app">
-  <j-button @click="showToast1">兔斯基测试上</j-button>
-  <j-button @click="showToast2">兔斯基测试中</j-button>
-  <j-button @click="showToast3">兔斯基测试下</j-button>
+  <j-tabs :selected.sync="selectedTab">
+    <j-tabs-head>
+      <template slot="actions">
+        <button>设置</button>
+      </template>
+      <j-tabs-head-item name="singer">
+        <j-icon name="setting"></j-icon>李志
+      </j-tabs-head-item>
+      <j-tabs-head-item name="dancer" disabled>
+        玮玮
+      </j-tabs-head-item>
+      <j-tabs-head-item name="poetry">
+        张佺
+      </j-tabs-head-item>
+    </j-tabs-head>
+    <j-tabs-body>
+      <j-tabs-body-pane name="singer">
+        山阴路
+      </j-tabs-body-pane>
+      <j-tabs-body-pane name="dancer">
+        白银饭店
+      </j-tabs-body-pane>
+      <j-tabs-body-pane name="poetry">
+        黄河谣
+      </j-tabs-body-pane>
+    </j-tabs-body>
+  </j-tabs>
 </div>
 <script src="src/app.js"></script>
 </body>
