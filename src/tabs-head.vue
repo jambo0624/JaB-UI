@@ -1,7 +1,9 @@
 <template>
   <div class="tabs-head">
     <slot></slot>
-    <slot name="actions"></slot>
+    <div class="actions-wrapper">
+      <slot name="actions"></slot>
+    </div>
   </div>
 </template>
 
@@ -10,7 +12,6 @@
     name: "JTabsHead",
     inject: ['eventBus'],
     created() {
-      console.log(this.eventBus)
     }
   }
 </script>
@@ -19,6 +20,12 @@
   $tab-height: 40px;
   .tabs-head{
     display: flex;
-    height: ;
+    height: $tab-height;
+    justify-content: start;
+    align-items: center;
+    border: 1px solid #000;
+    > .actions-wrapper {
+      margin-left: auto;
+    }
   }
 </style>

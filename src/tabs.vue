@@ -10,7 +10,7 @@
     name: "JTabs",
     props: {
       selected: {
-        type: Boolean,
+        type: String,
         required: true
       },
       direction: {
@@ -31,12 +31,8 @@
         eventBus: this.eventBus
       }
     },
-    created() {
-      console.log('this.eventBus')
-      console.log(this.eventBus)
-      console.log('this')
-      console.log(this)
-      // this.$emit('update:selected','')
+    mounted() {
+      this.eventBus.$emit('update:selected',this.selected)
     }
   }
 </script>
