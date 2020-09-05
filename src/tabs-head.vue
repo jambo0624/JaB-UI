@@ -1,6 +1,7 @@
 <template>
   <div class="tabs-head">
     <slot></slot>
+    <div class="line" ref="line"></div>
     <div class="actions-wrapper">
       <slot name="actions"></slot>
     </div>
@@ -12,18 +13,28 @@
     name: "JTabsHead",
     inject: ['eventBus'],
     created() {
+      this.eventBus.$on('update:selected',(item)=>{
+      })
     }
   }
 </script>
 
 <style lang="scss" scoped>
   $tab-height: 40px;
+  $blue: #40a9ff;
   .tabs-head{
     display: flex;
     height: $tab-height;
     justify-content: start;
     align-items: center;
     border: 1px solid #000;
+    position: relative;
+    > .line {
+      position: absolute;
+      bottom: 0;
+      border-bottom: 3px solid $blue;
+      width: 100px;
+    }
     > .actions-wrapper {
       margin-left: auto;
     }

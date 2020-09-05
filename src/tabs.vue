@@ -32,7 +32,17 @@
       }
     },
     mounted() {
-      this.eventBus.$emit('update:selected',this.selected)
+      this.$children.forEach(vm=>{
+        if(vm.$options.name === 'JTabsHead'){
+          vm.$children.forEach(item=>{
+            if(item.$options.name === 'JTabsHeadItem'
+              && item.name === this.selected){
+              console.log(item.$el)
+              this.eventBus.$emit('update:selected',this.selected, item)
+            }
+          })
+        }
+      })
     }
   }
 </script>
