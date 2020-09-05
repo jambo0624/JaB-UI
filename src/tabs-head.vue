@@ -12,8 +12,12 @@
   export default {
     name: "JTabsHead",
     inject: ['eventBus'],
-    created() {
-      this.eventBus.$on('update:selected',(item)=>{
+    mounted() {
+      this.eventBus.$on('update:selected',(item, vm)=>{
+        const { width, left } = vm.$el.getBoundingClientRect()
+        const parentLeft = vm.$parent.$el.getBoundingClientRect().left
+        this.$refs.line.style.width = `${width}px`
+        this.$refs.line.style.left = `${left - parentLeft}px`
       })
     }
   }
@@ -32,8 +36,8 @@
     > .line {
       position: absolute;
       bottom: 0;
-      border-bottom: 3px solid $blue;
-      width: 100px;
+      border-bottom: 1px solid $blue;
+      transition: all .3s;
     }
     > .actions-wrapper {
       margin-left: auto;
