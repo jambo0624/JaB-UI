@@ -32,12 +32,16 @@
       }
     },
     mounted() {
+      if(this.$children.length===0){
+        console && console.warn &&
+        console.warn('tabs的子组件必须是tabs-head和tabs-body')
+      }
       this.$children.forEach(vm=>{
         if(vm.$options.name === 'JTabsHead'){
           vm.$children.forEach(childVm=>{
             if(childVm.$options.name === 'JTabsHeadItem'
               && childVm.name === this.selected){
-              this.eventBus.$emit('update:selected',this.selected, childVm)
+              this.eventBus && this.eventBus.$emit('update:selected',this.selected, childVm)
             }
           })
         }

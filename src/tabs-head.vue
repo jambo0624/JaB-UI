@@ -13,12 +13,14 @@
     name: "JTabsHead",
     inject: ['eventBus'],
     mounted() {
-      this.eventBus.$on('update:selected',(item, vm)=>{
-        const { width, left } = vm.$el.getBoundingClientRect()
-        const parentLeft = vm.$parent.$el.getBoundingClientRect().left
-        this.$refs.line.style.width = `${width}px`
-        this.$refs.line.style.left = `${left - parentLeft}px`
-      })
+      if(this.eventBus) {
+        this.eventBus.$on('update:selected',(item, vm)=>{
+          const { width, left } = vm.$el.getBoundingClientRect()
+          const parentLeft = vm.$parent.$el.getBoundingClientRect().left
+          this.$refs.line.style.width = `${width}px`
+          this.$refs.line.style.left = `${left - parentLeft}px`
+        })
+      }
     }
   }
 </script>
