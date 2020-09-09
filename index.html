@@ -24,7 +24,7 @@
     }
 
     #app {
-      margin: 20px;
+      margin: 100px;
     }
 
     body {
@@ -37,33 +37,18 @@
 </head>
 <body>
 <div id="app">
-  <j-tabs :selected.sync="selectedTab">
-    <j-tabs-head>
-      <template slot="actions">
-        <button>设置</button>
-      </template>
-      <j-tabs-head-item name="singer">
-        <j-icon name="setting"></j-icon>李志
-      </j-tabs-head-item>
-      <j-tabs-head-item name="dancer" disabled>
-        玮玮
-      </j-tabs-head-item>
-      <j-tabs-head-item name="poetry">
-        张佺
-      </j-tabs-head-item>
-    </j-tabs-head>
-    <j-tabs-body>
-      <j-tabs-body-pane name="singer">
-        山阴路
-      </j-tabs-body-pane>
-      <j-tabs-body-pane name="dancer">
-        白银饭店
-      </j-tabs-body-pane>
-      <j-tabs-body-pane name="poetry">
-        黄河谣
-      </j-tabs-body-pane>
-    </j-tabs-body>
-  </j-tabs>
+  <j-popover>
+    <template slot="content">
+      <div>popover 内容 1</div>
+    </template>
+    <button>click1</button>
+  </j-popover>
+  <j-popover>
+    <template slot="content">
+      <div>popover 内容 2</div>
+    </template>
+    <button>click2</button>
+  </j-popover>
 </div>
 <script src="src/app.js"></script>
 </body>
