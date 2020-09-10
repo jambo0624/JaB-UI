@@ -24,8 +24,9 @@
           this.$nextTick(()=>{
             document.body.appendChild(this.$refs.contentWrapper)
             let { top, left } = this.$refs.triggerWrapper.getBoundingClientRect()
+            let scrollTop = window.scrollY
             this.$refs.contentWrapper.style.left = left+'px'
-            this.$refs.contentWrapper.style.top = top+'px'
+            this.$refs.contentWrapper.style.top = scrollTop+top+'px'
             let changeVisible = ()=>{
               this.visible = false
               document.removeEventListener('click',changeVisible)
