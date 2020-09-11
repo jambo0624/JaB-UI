@@ -3,7 +3,7 @@
     <div ref="contentWrapper" class="content-wrapper" v-if="visible">
       <slot name="content"></slot>
     </div>
-    <span ref="triggerWrapper">
+    <span ref="triggerWrapper" class="trigger-wrapper">
       <slot></slot>
     </span>
   </div>
@@ -61,6 +61,8 @@
 </script>
 
 <style scoped lang="scss">
+  $border-color: #333;
+  $border-radius: 4px;
   .j-popover{
     display: inline-block;
     vertical-align: top;
@@ -68,8 +70,34 @@
   }
   .content-wrapper{
     position: absolute;
-    border: 1px solid #000;
-    box-shadow: 0 0 3px rgba(0,0,0,0.5);
+    border: 1px solid $border-color;
+    border-radius: $border-radius;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.5);
+    /* 👇两行可以实现包括小三角形的box-shadow，但是兼容性较差 */
+    /*filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));*/
+    /*background: #fff;*/
     transform: translateY(-100%);
+    padding: .5em 1em;
+    margin-top: -10px;
+    max-width: 20em;
+    word-break: break-all;
+    &::before,&::after{
+      content: '';
+      display: block;
+      border: 10px solid transparent;
+      border-top-color: #000;
+      width: 0;
+      height: 0;
+      position: absolute;
+      top: 100%;
+      left: 10px;
+    }
+    &::after{
+      border-top-color: #fff;
+      top: calc(100% - 1px);
+    }
+  }
+  .trigger-wrapper{
+    display: inline-block;
   }
 </style>
