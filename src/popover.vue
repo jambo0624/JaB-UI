@@ -1,6 +1,7 @@
 <template>
   <div class="j-popover" ref="popover" @click="onClick">
-    <div ref="contentWrapper" class="content-wrapper" v-if="visible">
+    <div ref="contentWrapper" class="content-wrapper"
+         v-if="visible" :class="{[`position-${position}`]:true}">
       <slot name="content"></slot>
     </div>
     <span ref="triggerWrapper" class="trigger-wrapper">
@@ -12,6 +13,15 @@
 <script>
   export default {
     name: "JPopover",
+    props:{
+      position: {
+        type: String,
+        default: 'top',
+        validator(value){
+          return ['top','bottom','left','right'].indexOf(value) >= 0
+        }
+      }
+    },
     data(){
       return {
         visible: false
@@ -19,10 +29,24 @@
     },
     methods:{
       positionContent(){
-        document.body.appendChild(this.$refs.contentWrapper)
-        let { top, left } = this.$refs.triggerWrapper.getBoundingClientRect()
-        this.$refs.contentWrapper.style.left = window.scrollY + left +'px'
-        this.$refs.contentWrapper.style.top = window.scrollY + top +'px'
+        const { contentWrapper, triggerWrapper } = this.$refs
+        document.body.appendChild(contentWrapper)
+        let { width, height, top, left } = triggerWrapper.getBoundingClientRect()
+        let { height: contentHeight } = contentWrapper.getBoundingClientRect()
+        if(this.position === 'top'){
+          contentWrapper.style.left = window.scrollY + left +'px'
+          contentWrapper.style.top = window.scrollY + top +'px'
+        }else if(this.position === 'bottom'){
+          contentWrapper.style.left = window.scrollY + left +'px'
+          contentWrapper.style.top = window.scrollY + height + top +'px'
+        }else if(this.position === 'left'){
+          contentWrapper.style.left = window.scrollY + left +'px'
+          contentWrapper.style.top = window.scrollY + top + (height - contentHeight)/2 +'px'
+        }else if(this.position === 'right'){
+          contentWrapper.style.left = window.scrollY + left + width +'px'
+          contentWrapper.style.top = window.scrollY + top + (height - contentHeight)/2 +'px'
+        }
+
       },
       onClickDocument(event){
         if(this.$refs.popover &&
@@ -76,25 +100,69 @@
     /* 👇两行可以实现包括小三角形的box-shadow，但是兼容性较差 */
     /*filter: drop-shadow(0 0 3px rgba(0,0,0,0.5));*/
     /*background: #fff;*/
-    transform: translateY(-100%);
+    background: #fff;
     padding: .5em 1em;
-    margin-top: -10px;
     max-width: 20em;
     word-break: break-all;
     &::before,&::after{
       content: '';
       display: block;
       border: 10px solid transparent;
-      border-top-color: #000;
       width: 0;
       height: 0;
       position: absolute;
-      top: 100%;
-      left: 10px;
     }
-    &::after{
-      border-top-color: #fff;
-      top: calc(100% - 1px);
+    &.position-top{
+      transform: translateY(-100%);
+      margin-top: -10px;
+      &::before,&::after{
+        border-top-color: #000;
+        top: 100%;
+        left: 10px;
+      }
+      &::after{
+        border-top-color: #fff;
+        top: calc(100% - 1px);
+      }
+    }
+    &.position-bottom{
+      margin-top: 10px;
+      &::before,&::after{
+        border-bottom-color: #000;
+        bottom: 100%;
+        left: 10px;
+      }
+      &::after{
+        border-bottom-color: #fff;
+        bottom: calc(100% - 1px);
+      }
+    }
+    &.position-left{
+      transform: translateX(-100%);
+      margin-left: -10px;
+      &::before,&::after{
+        top: 50%;
+        transform: translateY(-50%);
+        border-left-color: #000;
+        left: 100%;
+      }
+      &::after{
+        border-left-color: #fff;
+        left: calc(100% - 1px);
+      }
+    }
+    &.position-right{
+      margin-left: 10px;
+      &::before,&::after{
+        top: 50%;
+        transform: translateY(-50%);
+        border-right-color: #000;
+        right: 100%;
+      }
+      &::after{
+        border-right-color: #fff;
+        right: calc(100% - 1px);
+      }
     }
   }
   .trigger-wrapper{
