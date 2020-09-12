@@ -37,7 +37,7 @@
 </head>
 <body>
 <div id="app">
-  <div style="border: 1px solid #000;padding: 50px;">
+  <div style="padding: 50px;">
     <j-popover position="top">
       <template slot="content">
         <div>popover 内容 1</div>
@@ -57,6 +57,32 @@
       <j-button>click3</j-button>
     </j-popover>
     <j-popover position="right">
+      <template slot="content">
+        <div>popover 内容 4</div>
+      </template>
+      <j-button>click4</j-button>
+    </j-popover>
+  </div>
+  <div style="padding: 50px;">
+    <j-popover position="top" trigger="hover">
+      <template slot="content">
+        <div>popover 内容 1</div>
+      </template>
+      <j-button>click1</j-button>
+    </j-popover>
+    <j-popover position="bottom" trigger="hover">
+      <template slot="content">
+        <div>popover 内容 2</div>
+      </template>
+      <j-button>click2</j-button>
+    </j-popover>
+    <j-popover position="left" trigger="hover">
+      <template slot="content">
+        <div>popover 内容 3</div>
+      </template>
+      <j-button>click3</j-button>
+    </j-popover>
+    <j-popover position="right" trigger="hover">
       <template slot="content">
         <div>popover 内容 4</div>
       </template>
