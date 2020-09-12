@@ -8,15 +8,27 @@
   import Vue from 'vue'
   export default {
     name: "JCollapse",
-    data() {
-      return {
-        eventBus: new Vue()
+    props:{
+      single: {
+        type: Boolean,
+        default: false
+      },
+      selected: {
+        type: String
       }
     },
     provide(){
       return {
         eventBus: this.eventBus
       }
+    },
+    data() {
+      return {
+        eventBus: new Vue()
+      }
+    },
+    mounted() {
+      this.eventBus.$emit('update:selected', this.selected)
     }
   }
 </script>

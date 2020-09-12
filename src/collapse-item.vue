@@ -15,6 +15,10 @@
       title: {
         type: String,
         required: true
+      },
+      name: {
+        type: String,
+        required: true
       }
     },
     data(){
@@ -23,23 +27,21 @@
       }
     },
     mounted() {
-      this.eventBus.$on('update:selected',(vm)=>{
-        if(vm !== this){
-          this.close()
+      this.eventBus && this.eventBus.$on('update:selected',(name)=>{
+        if(name !== this.name){
+          this.open = false
+        }else {
+          this.open = true
         }
       })
     },
     methods: {
       toggle(){
         if(this.open){
-          this.close()
+          this.open = false
         }else {
-          this.open = true
-          this.eventBus.$emit('update:selected', this)
+          this.eventBus && this.eventBus.$emit('update:selected', this.name)
         }
-      },
-      close(){
-        this.open = false
       }
     }
   }
