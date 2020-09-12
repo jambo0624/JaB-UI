@@ -23,13 +23,16 @@
     },
     data(){
       return {
-        open: false
+        open: false,
+        single: false
       }
     },
     mounted() {
       this.eventBus && this.eventBus.$on('update:selected',(name)=>{
         if(name !== this.name){
-          this.open = false
+          if(this.single){
+            this.open = false
+          }
         }else {
           this.open = true
         }
