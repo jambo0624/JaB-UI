@@ -1,6 +1,6 @@
 <template>
   <div class="j-collapse-item">
-    <div class="title" @click="open = !open">{{title}}</div>
+    <div class="title" @click="toggle">{{title}}</div>
     <div class="content" v-if="open">
       <slot></slot>
     </div>
@@ -10,6 +10,7 @@
 <script>
   export default {
     name: "JCollapseItem",
+    inject: ['eventBus'],
     props:{
       title: {
         type: String,
@@ -19,6 +20,26 @@
     data(){
       return {
         open: false
+      }
+    },
+    mounted() {
+      this.eventBus.$on('update:selected',(vm)=>{
+        if(vm !== this){
+          this.close()
+        }
+      })
+    },
+    methods: {
+      toggle(){
+        if(this.open){
+          this.close()
+        }else {
+          this.open = true
+          this.eventBus.$emit('update:selected', this)
+        }
+      },
+      close(){
+        this.open = false
       }
     }
   }
