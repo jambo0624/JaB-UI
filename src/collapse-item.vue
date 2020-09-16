@@ -76,5 +76,8 @@
     > .content {
       padding: 8px;
     }
+    &:hover{
+      cursor: pointer;
+    }
   }
 </style>
