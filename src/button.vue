@@ -1,5 +1,6 @@
 <template>
-  <button class="j-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')">
+  <button class="j-button" :class="{[`icon-${iconPosition}`]:true}" @click="$emit('click')" :disabled="disabled"
+  >
     <j-icon v-if="icon && !loading" :name="icon" class="icon"></j-icon>
     <j-icon v-if="loading" name="loading" class="loading icon"></j-icon>
     <div class="content">
@@ -21,6 +22,10 @@
         }
       },
       loading:{
+        type: Boolean,
+        default: false
+      },
+      disabled:{
         type: Boolean,
         default: false
       }
@@ -92,6 +97,9 @@
       > .content {
         order: 1;
       }
+    }
+    &[disabled] {
+      cursor: not-allowed;
     }
   }
 </style>
