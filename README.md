@@ -1,6 +1,8 @@
 # 一个基于 vue 的UI 框架
 [![Build Status](https://travis-ci.org/jambo0624/JaB-UI.svg?branch=master)](https://travis-ci.org/jambo0624/JaB-UI)
-
+[![npm package](https://img.shields.io/npm/v/jab-ui-test.svg?style=flat-square)](https://www.npmjs.com/package/jab-ui-test)
+![](https://img.shields.io/badge/language-JavaScript-yellow.svg)
+![](https://img.shields.io/badge/license-MIT-000000.svg)
  作者：Jambo
 
 ## 介绍
@@ -37,10 +39,6 @@ IE8及以上都支持此样式。
 
 [官方文档](https://jambo0624.github.io/JaB-UI/)
 
-## 提问
-
-[Issues](https://github.com/jambo0624/JaB-UI/issues)
-
 ## 联系方式
 
-邮箱：mijac0624@gmail.com
+mijac0624@gmail.com
