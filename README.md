@@ -34,6 +34,13 @@ IE8及以上都支持此样式。
 ```
 
 ## 文档
+
+[官方文档](https://jambo0624.github.io/JaB-UI/)
+
 ## 提问
-## 变更记录
+
+[Issues](https://github.com/jambo0624/JaB-UI/issues)
+
 ## 联系方式
+
+邮箱：mijac0624@gmail.com
