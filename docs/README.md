@@ -1,8 +1,8 @@
 ---
 home: true
 heroImage: 
-heroText: Jab-UI
-tagline: Jab UI 是一个易扩展的 UI 框架
+heroText: JaB-UI
+tagline: JaB UI 是一个易扩展的 UI 框架
 actionText: 快速上手 →
 actionLink: /get-started/
 features:

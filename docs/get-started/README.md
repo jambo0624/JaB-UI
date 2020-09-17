@@ -18,7 +18,7 @@ title: 快速上手
 
 IE 8 及以上浏览器支持此样式。
 
-## 引入 Jab-UI
+## 引入 JaB-UI
 
 ```js
 import { Button } from "jab-ui";

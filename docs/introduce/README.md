@@ -1,11 +1,11 @@
-# Jab-UI
+# JaB-UI
 
 [![Build Status](https://travis-ci.org/jambo0624/JaB-UI.svg?branch=master)](https://travis-ci.org/jambo0624/JaB-UI)
 [![npm package](https://img.shields.io/npm/v/jab-ui-test.svg?style=flat-square)](https://www.npmjs.com/package/jab-ui-test)
 ![](https://img.shields.io/badge/language-JavaScript-yellow.svg)
 ![](https://img.shields.io/badge/license-MIT-000000.svg)
 
-Jab-UI 是一个易扩展的 UI 框架，目前提供了一些常用组件（不定期更新），适合 PC 端和移动端使用。
+JaB-UI 是一个易扩展的 UI 框架，目前提供了一些常用组件（不定期更新），适合 PC 端和移动端使用。
 
 ## 现已支持
 

@@ -1,6 +1,6 @@
 module.exports = {
-  base: '/Jab-UI/',
-  title: 'Jab-UI',
+  base: '/JaB-UI/',
+  title: 'JaB-UI',
   description: 'an elegant UI framework based on Vue 2.0',
   markdown: {
     anchor: { permalink: false },
