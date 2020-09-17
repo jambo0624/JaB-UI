@@ -1,6 +1,6 @@
 const expect = chai.expect;
 import Vue from 'vue'
-import Toast from '../src/toast'
+import Toast from '../src/toast/toast'
 
 // 设置为 false 以阻止 vue 在启动时生成生产提示
 Vue.config.productionTip = false

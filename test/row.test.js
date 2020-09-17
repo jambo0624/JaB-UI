@@ -1,7 +1,7 @@
 const expect = chai.expect;
 import Vue from 'vue'
-import Row from '../src/row'
-import Col from '../src/col'
+import Row from '../src/grid/row'
+import Col from '../src/grid/col'
 
 // 设置为 false 以阻止 vue 在启动时生成生产提示
 Vue.config.productionTip = false

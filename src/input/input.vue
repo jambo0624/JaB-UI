@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-  import Icon from './icon'
+  import Icon from '../button/icon'
   export default {
     name: 'JInput',
     components:{
