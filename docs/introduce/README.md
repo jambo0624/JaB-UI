@@ -1,7 +1,7 @@
 # JaB-UI
 
 [![Build Status](https://travis-ci.org/jambo0624/JaB-UI.svg?branch=master)](https://travis-ci.org/jambo0624/JaB-UI)
-[![npm package](https://img.shields.io/npm/v/jab-ui-test.svg?style=flat-square)](https://www.npmjs.com/package/jab-ui-test)
+[![npm package](https://img.shields.io/npm/v/jab-ui.svg?style=flat-square)](https://www.npmjs.com/package/jab-ui)
 ![](https://img.shields.io/badge/language-JavaScript-yellow.svg)
 ![](https://img.shields.io/badge/license-MIT-000000.svg)
 
