@@ -1,8 +1,12 @@
 module.exports = {
+  base: '/Jab-UI/',
   title: 'Jab-UI',
   description: 'an elegant UI framework based on Vue 2.0',
+  markdown: {
+    anchor: { permalink: false },
+  },
   themeConfig: {
-    logo: '/assets/img/logo.png',
+    logo: '',
     nav: [
       { text: '主页', link: '/' },
       { text: '欢迎Star', link: 'https://github.com/jambo0624/JaB-UI', target: '_blank' },
@@ -11,26 +15,19 @@ module.exports = {
     sidebar: [
       {
         title: '介绍',
-        collapse: false,
+        collapsable: false,
         children: ['/introduce/']
       },
       {
         title: '入门',
-        collapse: false,
+        collapsable: false,
         children: ['/install/','get-started/']
       },
       {
         title: '组件',
-        collapse: false,
+        collapsable: false,
         children: [
-          "/components/button",
-          "/components/input",
-          "/components/tabs",
-          "/components/grid",
-          "/components/layout",
-          "/components/popover",
-          "/components/collapse",
-          "/components/toast"
+          "/components/button"
         ]
       }
     ]
