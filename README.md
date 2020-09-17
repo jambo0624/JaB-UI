@@ -2,8 +2,9 @@
 [![Build Status](https://travis-ci.org/jambo0624/JaB-UI.svg?branch=master)](https://travis-ci.org/jambo0624/JaB-UI)
 [![npm package](https://img.shields.io/npm/v/jab-ui.svg?style=flat-square)](https://www.npmjs.com/package/jab-ui)
 ![](https://img.shields.io/badge/language-JavaScript-yellow.svg)
-![](https://img.shields.io/badge/license-MIT-000000.svg)
- 作者：Jambo
+![](https://img.shields.io/badge/license-MIT-000000.svg)    
+
+作者：Jambo
 
 ## 介绍
 
@@ -19,10 +20,10 @@ JaB-UI 是一个易扩展的 UI 框架，目前提供了一些常用组件（不
 ```
 IE8及以上都支持此样式。
 
-2. 安装jab-ui
+2. 安装JaB-UI     
 ` npm i --save jab-ui`
 
-3. 引入jab-ui
+3. 引入JaB-UI
 ``` js
   import {Button, ButtonGroup, Icon} from 'jab-ui'
   import 'jab-ui/dist/index.css'
