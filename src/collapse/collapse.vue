@@ -28,6 +28,10 @@
       }
     },
     mounted() {
+      if(this.single && this.selected.length>1){
+        console && console.warn && console.warn('single 值为 true 时，只能默认选中一个')
+        this.selected.splice(1)
+      }
       this.eventBus.$emit('update:selected', this.selected)
       this.eventBus.$on('update:addSelected',(name)=>{
         let selectedCopy = JSON.parse(JSON.stringify(this.selected))
