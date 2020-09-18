@@ -28,7 +28,8 @@ module.exports = {
         collapsable: false,
         children: [
           "/components/button",
-          "/components/collapse"
+          "/components/collapse",
+          "/components/grid"
         ]
       }
     ]
