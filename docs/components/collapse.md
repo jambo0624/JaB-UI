@@ -24,9 +24,9 @@ title: Collapse 折叠面板
 
 ```js
 data() {
-    return {
-        selectedTab: ['1', '2', '3']
-    }
+  return {
+    selectedTab: ['1', '2', '3']
+  }
 }
 ```
 

@@ -29,7 +29,8 @@ module.exports = {
         children: [
           "/components/button",
           "/components/collapse",
-          "/components/grid"
+          "/components/grid",
+          "/components/input"
         ]
       }
     ]
