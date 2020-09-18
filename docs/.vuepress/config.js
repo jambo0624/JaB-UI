@@ -30,7 +30,8 @@ module.exports = {
           "/components/button",
           "/components/collapse",
           "/components/grid",
-          "/components/input"
+          "/components/input",
+          "/components/layout"
         ]
       }
     ]

@@ -49,7 +49,5 @@ data() {
 
 ```html
 <j-input v-model="value"></j-input>
-<div>
-  value: {{value}}
-</div>
+<div> value: {{value}} </div>
 ```
