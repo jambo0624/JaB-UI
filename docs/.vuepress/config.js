@@ -31,7 +31,10 @@ module.exports = {
           "/components/collapse",
           "/components/grid",
           "/components/input",
-          "/components/layout"
+          "/components/layout",
+          "/components/popover",
+          // "/components/tabs",
+          // "/components/toast"
         ]
       }
     ]
