@@ -4,7 +4,7 @@
          v-if="visible" :class="{[`position-${position}`]:true}">
       <slot name="content" :close="close"></slot>
     </div>
-    <span ref="triggerWrapper" class="trigger-wrapper">
+    <span ref="triggerWrapper" class="trigger-wrapper" style="display:inline-block;">
       <slot></slot>
     </span>
   </div>
@@ -59,14 +59,14 @@
         const { width, height, top, left } = triggerWrapper.getBoundingClientRect()
         const { height: contentHeight } = contentWrapper.getBoundingClientRect()
         let positions = {
-          top: {left: window.scrollY + left, top: window.scrollY + top},
-          bottom: {left: window.scrollY + left, top: window.scrollY + height + top},
+          top: {left: window.scrollX + left, top: window.scrollY + top},
+          bottom: {left: window.scrollX + left, top: window.scrollY + height + top},
           left: {
-            left: window.scrollY + left,
+            left: window.scrollX + left,
             top: window.scrollY + top + (height - contentHeight)/2
           },
           right: {
-            left: window.scrollY + left + width,
+            left: window.scrollX + left + width,
             top: window.scrollY + top + (height - contentHeight)/2
           }
         }
