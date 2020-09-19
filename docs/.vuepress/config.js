@@ -5,6 +5,9 @@ module.exports = {
   markdown: {
     anchor: { permalink: false },
   },
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.ico' }]
+  ],
   themeConfig: {
     logo: '',
     nav: [
