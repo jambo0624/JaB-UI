@@ -35,6 +35,7 @@ module.exports = {
           "/components/grid",
           "/components/input",
           "/components/layout",
+          "/components/list",
           "/components/popover",
           "/components/tabs",
           "/components/toast"

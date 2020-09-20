@@ -19,6 +19,7 @@ import TabsBodyPane from './tabs/tabs-body-pane'
 import Popover from './popover/popover'
 import Collapse from './collapse/collapse'
 import CollapseItem from './collapse/collapse-item'
+import List from './list/list'
 
 Vue.component('j-button', Button);
 Vue.component('j-icon', Icon);
@@ -39,6 +40,7 @@ Vue.component('j-tabs-body-pane', TabsBodyPane);
 Vue.component('j-popover', Popover);
 Vue.component('j-collapse', Collapse);
 Vue.component('j-collapse-item', CollapseItem);
+Vue.component('j-list', List);
 Vue.use(plugin)
 
 new Vue({
