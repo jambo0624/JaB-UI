@@ -96,7 +96,7 @@ data() {
   }
 },
 created() {
-  for (let i = 1; i < 30; i++) {
+  for (let i = 1; i < 31; i++) {
     this.originalList.push(1);
   }
 },
@@ -109,27 +109,27 @@ methods: {
 }
 ```
 
-## 列表数据变化回调及动画
+## 数据变化及动画
+
+:::tip
+默认不开启动画，如需要添加动画，需要设置 animation 属性
+:::
 
 #### 示例
 
 #
 
 <ClientOnly>
-<list-demo />
+<list-callbackAndAnimation-demo />
 </ClientOnly>
-
-:::tip
-组件默认不开启动画，如需要给更改列表数据操作添加动画，不要忘记 animation 属性
-:::
 
 #### 代码
 
-```html{5,9,10,11}
+```html
 <div>
-  <w-button @click="addList" style="margin-bottom: 10px;">add</w-button>
-  <w-button @click="shuffleList" style="margin-bottom: 10px;">shuffle</w-button>
-  <w-list
+  <j-button @click="addList" style="margin-bottom: 10px;">添加</j-button>
+  <j-button @click="shuffleList" style="margin-bottom: 10px;">重排</j-button>
+  <j-list
     animation
     :originalList="originalList"
     :itemHeight="itemHeight"
@@ -146,10 +146,10 @@ methods: {
         :style="{ height: itemHeight + 'px', lineHeight: itemHeight + 'px' }"
       >
         {{ item.value }}
-        <w-button type="danger" @click="removeItem(item.id)">remove</w-button>
+        <j-button @click="removeItem(item.id)">删除</j-button>
       </div>
     </template>
-  </w-list>
+  </j-list>
 </div>
 ```
 
@@ -162,7 +162,7 @@ data() {
   };
 },
 created() {
-  for (let i = 0; i < 29; i++) {
+  for (let i = 1; i < 31; i++) {
     this.originalList.push({ id: i, value: i });
     this.i = i;
   }
@@ -191,77 +191,21 @@ methods: {
     return Math.floor(Math.random() * (max + 1));
   },
   onAdd() {
-    this.$toast("Add item successfully", {
+    this.$toast("添加成功", {
       autoClose: 3,
     });
   },
   onRemove() {
-    this.$toast("Remove item successfully", {
+    this.$toast("删除成功", {
       autoClose: 3,
     });
   },
   onChange() {
-    this.$toast("List rearrangement successfully", {
+    this.$toast("重排成功", {
       autoClose: 3,
     });
   },
 },
-```
-
-## 动态高度
-
-有时你的列表元素高度并非静态像素，此时你可以传入 estimatedItemHeight 作为初始化展示高度，在视图更新时组件会还原元素真实高度
-
-#### 示例
-
-#
-
-<ClientOnly>
-<list-demo />
-</ClientOnly>
-
-:::tip
-在元素高度一致时尽量使用性能更好的静态高度
-:::
-
-#### 代码
-
-```html{4}
-<w-list
-  :originalList="originalList"
-  :itemHeight="itemHeight"
-  :estimatedItemHeight="60"
-  style="width: 500px; height: 600px;"
->
-  <template #items="{ visibleData }">
-    <div
-      class="item"
-      v-for="(item, index) in visibleData"
-      :key="item.id"
-      :style="{
-          height: itemHeight[index] + 'px',
-          lineHeight: itemHeight[index] + 'px',
-        }"
-    >
-      {{ item.value }}
-    </div>
-  </template>
-</w-list>
-```
-
-```js
-data() {
-  return {
-    originalList: [],
-    itemHeight: [],
-  };
-},
-created() {
-  for (let i = 0; i < 9999; i++) {
-    this.originalList.push({ id: i, value: i });
-    this.itemHeight.push(Math.floor(Math.random() * 100) + 10);
-  }
-}
 ```
 
 ---

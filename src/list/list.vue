@@ -2,7 +2,7 @@
   <div ref="listContainer" class="j-list-container" @scroll="onScroll">
     <div class="j-list-phantom" :style="{ height: originalListHeight + 'px'}"></div>
     <div class="j-list" :style="{ transform: 'translateY('+ getTransform +'px)'}">
-      <transition-group>
+      <transition-group :name="listName">
         <slot name="items" :visibleData="visibleData"></slot>
       </transition-group>
     </div>
@@ -23,9 +23,15 @@
         type: Number,
         default: 80
       },
+      /* 上下预留项 */
       reversed: {
         type: Number,
         default: 5
+      },
+      /* 是否开启动画 */
+      animation: {
+        type:Boolean,
+        default: false
       }
     },
     data() {
@@ -39,7 +45,10 @@
         /* 滚动高度 */
         scrollTop: 0,
         /* phantom 高度，即可滚动高 */
-        originalLength: 0
+        originalLength: 0,
+        /* 列表名称（用于动画） */
+        listName: '',
+
       };
     },
     computed: {
@@ -66,6 +75,13 @@
     watch:{
       originalList(val){
         if(val){
+          this.animation && (this.listName = 'j-list')
+          this.$emit('changed')
+          if(val.length === this.originalLength -1){
+            this.$emit('removed')
+          }else if(val.length > this.originalLength){
+            this.$emit('added')
+          }
           this.originalLength = this.originalList.length
         }
       }
@@ -84,12 +100,15 @@
         this.start = Math.floor(this.scrollTop / this.itemHeight)
         this.end = this.start + this.visibleCount + this.reversed
         this.end === this.originalLength && this.$emit('scroll')
+      },
+      onTransitionEnd(){
+        this.listName = ''
       }
     },
   };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
   .j-list-container {
     height: 100%;
     overflow: auto;
@@ -109,5 +128,27 @@
       right: 0;
       left: 0;
     }
+  }
+  .j-list-enter-active,
+  .j-list-leave-active,
+  .j-list-move {
+    transition: 500ms cubic-bezier(0.59, 0.12, 0.34, 0.95);
+    transition-property: opacity, transform;
+  }
+  .j-list-enter {
+    opacity: 0;
+    transform: translateX(50px) scaleY(0.5);
+  }
+  .j-list-enter-to {
+    opacity: 1;
+    transform: translateX(0) scaleY(1);
+  }
+  .j-list-leave-active {
+    position: absolute;
+  }
+  .j-list-leave-to {
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: center top;
   }
 </style>
