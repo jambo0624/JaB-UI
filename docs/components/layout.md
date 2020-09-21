@@ -46,7 +46,7 @@ title: Layout 布局
       header
     </j-header>
     <j-layout>
-      <j-sider style="height: 100px; background: darkgreen; width:200px;">
+      <j-sider hasCloseButton style="height: 100px; background: darkgreen; width:200px;">
         sider
       </j-sider>
       <j-content style="height: 100px; background:seagreen;">
@@ -73,7 +73,7 @@ title: Layout 布局
 
 ```html
   <j-layout style="overflow:hidden;">
-    <j-sider style="width:200px; background: darkgreen;">
+    <j-sider hasCloseButton style="width:200px; background: darkgreen;">
       sider
     </j-sider>
     <j-layout>

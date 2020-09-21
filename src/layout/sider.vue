@@ -2,7 +2,7 @@
   <transition name="slide">
     <div class="sider" v-if="visible">
       <slot></slot>
-      <j-button @click="visible = false">&times;</j-button>
+      <j-button @click="visible = false" v-if="hasCloseButton">&times;</j-button>
     </div>
   </transition>
 </template>
@@ -10,6 +10,12 @@
   import Button from '../../src/button/button'
   export default {
     name: 'JSider',
+    props: {
+      hasCloseButton:{
+        type: Boolean,
+        default: false
+      }
+    },
     components:{
       'j-button': Button
     },

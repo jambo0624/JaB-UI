@@ -1,7 +1,7 @@
 <template>
   <div>
     <j-layout style="overflow:hidden;">
-      <j-sider class="j-demo" style="background: darkgreen; width:200px;">
+      <j-sider hasCloseButton class="j-demo" style="background: darkgreen; width:200px;">
         sider
       </j-sider>
       <j-layout>

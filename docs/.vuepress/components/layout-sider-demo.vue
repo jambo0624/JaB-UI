@@ -5,7 +5,7 @@
         header
       </j-header>
       <j-layout>
-        <j-sider class="j-demo" style="height: 100px; background: darkgreen; width:200px;">
+        <j-sider hasCloseButton class="j-demo" style="height: 100px; background: darkgreen; width:200px;">
           sider
         </j-sider>
         <j-content class="j-demo" style="height: 100px; background:seagreen;">
