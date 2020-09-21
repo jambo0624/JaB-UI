@@ -140,7 +140,7 @@ methods: {
   >
     <template #items="{ visibleData }">
       <div
-        class="item"
+        class="j-item"
         v-for="item in visibleData"
         :key="item.id"
         :style="{ height: itemHeight + 'px', lineHeight: itemHeight + 'px' }"
