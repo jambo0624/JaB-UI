@@ -11,7 +11,7 @@ title: Toast 吐司弹出
 :::
 
 ```CSS
-.j-wrapper {
+.j-toast {
     z-index: 100;
 }
 ```

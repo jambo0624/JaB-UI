@@ -1,6 +1,6 @@
 <template>
-  <div class="j-wrapper" :class="toastClasses">
-    <div class="j-toast" ref="toast">
+  <div class="j-toast" :class="toastClasses">
+    <div class="j-toast-content" ref="toast">
       <div class="message">
         <slot v-if="!enableHtml"></slot>
         <div v-else v-html="$slots.default"></div>
@@ -99,13 +99,13 @@
     0% {opacity: 0;transform: translateY(-100%)}
     100% {opacity: 1;transform: translateY(0%)}
   }
-  .j-wrapper {
+  .j-toast {
     position: fixed;
     left: 50%;
     transform: translateX(-50%);
     &.position-top{
       top: 0;
-      .j-toast{
+      .j-toast-content{
         border-top-left-radius: 0;
         border-top-right-radius: 0;
         animation: slide-down $animation-delay;
@@ -114,19 +114,19 @@
     &.position-middle{
       top: 50%;
       transform: translateX(-50%) translateY(-50%);
-      .j-toast{
+      .j-toast-content{
         animation: fade-in $animation-delay;
       }
     }
     &.position-bottom{
       bottom: 0;
-      .j-toast{
+      .j-toast-content{
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
         animation: slide-up $animation-delay;
       }
     }
-    .j-toast {
+    .j-toast-content {
       font-size: $font-size;
       line-height: 1.8;
       min-height: $toast-min-height;

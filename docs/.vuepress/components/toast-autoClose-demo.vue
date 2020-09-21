@@ -26,7 +26,7 @@
 </script>
 
 <style>
-  .j-wrapper {
+  .j-toast {
     z-index: 100 !important;
   }
 </style>
