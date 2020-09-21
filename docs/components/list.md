@@ -4,7 +4,7 @@ title: List 列表
 
 # List
 
-一个高性能的 List 列表组件，支持无限滚动渲染，添加删除和重排动画 hook 等
+用于渲染大量数据的高性能 List 列表组件，支持无限滚动渲染，添加删除和重排动画 hook 等
 
 ## 基础用法
 
@@ -20,7 +20,8 @@ title: List 列表
 
 #### 代码
 
-通过[插槽 prop](https://cn.vuejs.org/v2/guide/components-slots.html#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD)提供了 visibleData 用作数据展示，你可以通过其渲染你想要的列表
+通过 name 为 items 的[插槽 prop](https://cn.vuejs.org/v2/guide/components-slots.html#%E4%BD%9C%E7%94%A8%E5%9F%9F%E6%8F%92%E6%A7%BD) visibleData，
+可以获取可视区域列表数据，从而对其进行展示
 
 ```html
 <j-list
@@ -30,7 +31,7 @@ title: List 列表
 >
   <template #items="{ visibleData }">
     <div
-      class="item"
+      class="j-item"
       v-for="item in visibleData"
       :key="item.id"
       :style="{ height: itemHeight + 'px', lineHeight: itemHeight + 'px' }"
@@ -45,11 +46,11 @@ title: List 列表
 data() {
   return {
     originalList: [],
-    itemHeight: 30,
+    itemHeight: 30
   }
 },
 created() {
-  for (let i = 0; i < 9999; i++) {
+  for (let i = 1; i < 10000; i++) {
     this.originalList.push({ id: i, value: i });
   }
 }
@@ -62,13 +63,13 @@ created() {
 #
 
 <ClientOnly>
-<list-demo />
+<list-infinit-demo />
 </ClientOnly>
 
 #### 代码
 
-```html{5}
-<w-list
+```html
+<j-list
   :originalList="originalList"
   :itemHeight="itemHeight"
   style="width: 500px; height: 600px;"
@@ -76,7 +77,7 @@ created() {
 >
   <template #items="{ visibleData }">
     <div
-      class="item"
+      class="j-item"
       v-for="(item, index) in visibleData"
       :key="item + index"
       :style="{ height: itemHeight + 'px', lineHeight: itemHeight + 'px' }"
@@ -84,24 +85,24 @@ created() {
       {{ item }}
     </div>
   </template>
-</w-list>
+</j-list>
 ```
 
 ```js
 data() {
   return {
     originalList: [],
-    itemHeight: 30,
+    itemHeight: 30
   }
 },
 created() {
-  for (let i = 0; i < 29; i++) {
+  for (let i = 1; i < 30; i++) {
     this.originalList.push(1);
   }
 },
 methods: {
   onScrollEnd() {
-    for (let i = 0; i < 5; i++) {
+    for (let i = 1; i < 6; i++) {
       this.originalList.push(1);
     }
   },

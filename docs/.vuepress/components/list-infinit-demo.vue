@@ -3,15 +3,16 @@
     :originalList="originalList"
     :itemHeight="itemHeight"
     style="width: 500px; height: 600px;"
+    @scroll="onScrollEnd"
   >
     <template #items="{ visibleData }">
       <div
         class="j-item"
-        v-for="item in visibleData"
-        :key="item.id"
+        v-for="(item, index) in visibleData"
+        :key="item + index"
         :style="{ height: itemHeight + 'px', lineHeight: itemHeight + 'px' }"
       >
-        {{ item.value }}
+        {{ item }}
       </div>
     </template>
   </j-list>
@@ -31,8 +32,15 @@
       };
     },
     created() {
-      for (let i = 1; i < 100; i++) {
-        this.originalList.push({ id: i, value: i });
+      for (let i = 1; i < 31; i++) {
+        this.originalList.push(1);
+      }
+    },
+    methods:{
+      onScrollEnd(){
+        for(let i = 1;i < 6; i++){
+          this.originalList.push(1)
+        }
       }
     }
   };

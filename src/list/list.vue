@@ -16,13 +16,31 @@
       /* 列表数据 */
       originalList: {
         type: Array,
-        default: () => [],
+        default: () => []
       },
       /* 行高 */
       itemHeight: {
         type: Number,
         default: 80
       },
+      reversed: {
+        type: Number,
+        default: 5
+      }
+    },
+    data() {
+      return {
+        /* 可视数据起始值 */
+        start: 0,
+        /* 可视数据结尾值 */
+        end: 0,
+        /* 可视区域高度 */
+        screenHeight: 0,
+        /* 滚动高度 */
+        scrollTop: 0,
+        /* phantom 高度，即可滚动高 */
+        originalLength: 0
+      };
     },
     computed: {
       /* 计算 j-phantom 的高度，决定可滚动的高 */
@@ -45,19 +63,12 @@
         )
       }
     },
-    data() {
-      return {
-        /* 可视数据起始值 */
-        start: 0,
-        /* 可视数据结尾值 */
-        end: 0,
-        /* 可视区域高度 */
-        screenHeight: 0,
-        /* 滚动高度 */
-        scrollTop: 0,
-        /* phantom 高度，即可滚动高 */
-        originalLength: 0
-      };
+    watch:{
+      originalList(val){
+        if(val){
+          this.originalLength = this.originalList.length
+        }
+      }
     },
     created() {
       this.start = 0
@@ -65,13 +76,14 @@
     },
     mounted() {
       this.screenHeight = this.$el.clientHeight
-      this.end = this.start + this.visibleCount
+      this.end = this.start + this.visibleCount + this.reversed
     },
     methods: {
       onScroll(){
         this.scrollTop = this.$refs.listContainer.scrollTop
         this.start = Math.floor(this.scrollTop / this.itemHeight)
-        this.end = this.start + this.visibleCount
+        this.end = this.start + this.visibleCount + this.reversed
+        this.end === this.originalLength && this.$emit('scroll')
       }
     },
   };
