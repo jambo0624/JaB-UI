@@ -2,13 +2,17 @@
   <transition name="slide">
     <div class="sider" v-if="visible">
       <slot></slot>
-      <button @click="visible = false">&times;</button>
+      <j-button @click="visible = false">&times;</j-button>
     </div>
   </transition>
 </template>
 <script>
+  import Button from '../../src/button/button'
   export default {
     name: 'JSider',
+    components:{
+      'j-button': Button
+    },
     data(){
       return {
         visible: true
