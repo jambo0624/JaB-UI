@@ -47,8 +47,7 @@
         /* phantom 高度，即可滚动高 */
         originalLength: 0,
         /* 列表名称（用于动画） */
-        listName: '',
-
+        listName: ''
       };
     },
     computed: {
