@@ -31,7 +31,7 @@
       };
     },
     created() {
-      for (let i = 1; i < 100; i++) {
+      for (let i = 1; i < 10000; i++) {
         this.originalList.push({ id: i, value: i });
       }
     }
